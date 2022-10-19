@@ -27,6 +27,10 @@ let extensionId, clientId, clientSecret, refreshToken, inputFile, doPublish, tar
 
         core.info("Starting upload");
         const uploadResource = await uploadExtension(store, token, inputFile);
+        if (uploadResource["uploadState"] === "FAILURE") {
+            core.setFailed("Upload failed: " + JSON.stringify(uploadResource["itemError"]));
+            return;
+        }
         core.info("Upload done, got the following result: " + uploadResource["uploadState"]);
 
         if (doPublish) {
