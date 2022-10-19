@@ -1,0 +1,31 @@
+name: 'Github Action Chrome Webstore Publish'
+description: 'A Github Action to publish a browser-extension to the Chrome WebStore'
+branding:
+  icon: "upload-cloud"
+  color: "red"
+
+inputs:
+  extensionId:
+    description: 'the id of the extension'
+    required: true
+  clientId:
+    description: 'the Google Client ID'
+    required: true
+  clientSecret:
+    description: 'the Google Client Secret'
+    required: true
+  refreshToken:
+    description: 'the Google Refresh Token'
+    required: true
+  inputFile:
+    description: 'the extension as zip file'
+    required: true
+  doPublish:
+    description: 'Define if the extension should be published after upload (defaults to false)'
+    required: false
+  target:
+    description: 'Publish target (either "default" or "trustedUsers")'
+    required: false
+runs:
+  using: 'node16'
+  main: 'index.js'

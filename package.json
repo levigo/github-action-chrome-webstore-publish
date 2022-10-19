@@ -1,0 +1,29 @@
+{
+  "name": "github-action-chrome-webstore-publish",
+  "version": "1.0.0",
+  "description": "A Github Action to publish a browser-extension to the Chrome WebStore",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/levigo/github-action-chrome-webstore-publish.git"
+  },
+  "keywords": [],
+  "author": "levigo solutions gmbh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/levigo/github-action-chrome-webstore-publish/issues"
+  },
+  "homepage": "https://github.com/levigo/github-action-chrome-webstore-publish#readme",
+  "dependencies": {
+    "@actions/core": "^1.9.0",
+    "@actions/github": "^5.0.3",
+    "chrome-webstore-upload": "^1.0.0"
+  },
+  "devDependencies": {
+    "debug": "^4.3.4"
+  }
+}
