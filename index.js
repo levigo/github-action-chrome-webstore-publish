@@ -2,7 +2,7 @@ import fs from "fs"
 import core from "@actions/core"
 import chromeWebstoreUpload from "chrome-webstore-upload";
 
-let extensionId, clientId, clientSecret, refreshToken, inputFile, doPublish, target;
+let extensionId, clientId, clientSecret, refreshToken, inputFile, doPublish, target, publisherId;
 
 (async () => {
     try {
@@ -11,6 +11,7 @@ let extensionId, clientId, clientSecret, refreshToken, inputFile, doPublish, tar
         clientSecret = core.getInput("clientSecret");
         refreshToken = core.getInput("refreshToken");
         inputFile = core.getInput("inputFile");
+        publisherId = core.getInput("publisherId");
         doPublish = core.getInput("doPublish") || false;
         target = core.getInput("target") || "default";
 
@@ -19,6 +20,7 @@ let extensionId, clientId, clientSecret, refreshToken, inputFile, doPublish, tar
 
         const store = chromeWebstoreUpload({
             extensionId,
+            publisherId,
             clientId,
             clientSecret,
             refreshToken,
