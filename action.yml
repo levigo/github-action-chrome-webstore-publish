@@ -27,5 +27,5 @@ inputs:
     description: 'Publish target (either "default" or "trustedUsers")'
     required: false
 runs:
-  using: 'node16'
-  main: 'index.js'
+  using: 'node24'
+  main: 'dist/index.js'

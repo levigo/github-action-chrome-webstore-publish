@@ -5,7 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "ncc build index.js -o dist --license licenses.txt"
   },
   "repository": {
     "type": "git",
@@ -24,6 +25,7 @@
     "chrome-webstore-upload": "^6.0.0"
   },
   "devDependencies": {
+    "@vercel/ncc": "^0.38.4",
     "debug": "^4.4.3"
   }
 }
